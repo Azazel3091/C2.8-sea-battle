@@ -183,7 +183,7 @@ while True:
             self.size = size
             pl = self.random_board()
             co = self.random_board()
-            co.hid = True
+            co.hid = False
 
             self.ai = AI(co, pl)
             self.us = User(pl, co)
@@ -241,11 +241,13 @@ while True:
                     num -= 1
 
                 if self.ai.board.count == 10:
+                    print(tabulate(table_game, headers=table_game_name))
                     print("-"*20)
                     print("Игрок выиграл!")
                     break
 
                 if self.us.board.count == 10:
+                    print(tabulate(table_game, headers=table_game_name))
                     print("-"*20)
                     print("Компьютер выиграл!")
                     break
